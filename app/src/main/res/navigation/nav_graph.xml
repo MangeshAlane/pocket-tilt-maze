@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.pockettilt.maze.ui.HomeFragment"
+        android:label="Pocket Tilt Maze">
+        <action
+            android:id="@+id/action_home_to_game"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_home_to_stats"
+            app:destination="@id/statsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.pockettilt.maze.ui.GameFragment"
+        android:label="Game">
+        <argument
+            android:name="isDaily"
+            app:argType="boolean" />
+        <argument
+            android:name="mazeSize"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.pockettilt.maze.ui.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.pockettilt.maze.ui.StatsFragment"
+        android:label="Stats" />
+
+</navigation>
